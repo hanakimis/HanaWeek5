@@ -32,10 +32,10 @@ class TabBarViewController: UIViewController {
         super.viewDidLoad()
         var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        homeTabButton.tag = 0
-        searchTabButton.tag = 1
-        composeTabButton.tag = 2
-        accountTabButton.tag = 3
+        homeTabButton.tag     = 0
+        searchTabButton.tag   = 1
+        composeTabButton.tag  = 2
+        accountTabButton.tag  = 3
         trendingTabButton.tag = 4
         tabButtons.append(homeTabButton)
         tabButtons.append(searchTabButton)
@@ -43,10 +43,10 @@ class TabBarViewController: UIViewController {
         tabButtons.append(accountTabButton)
         tabButtons.append(trendingTabButton)
         
-        homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
-        searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
-        composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
-        accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
+        homeViewController     = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
+        searchViewController   = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
+        composeViewController  = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
+        accountViewController  = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
         tabViewControllers.append(homeViewController)
         tabViewControllers.append(searchViewController)
