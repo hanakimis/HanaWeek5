@@ -24,6 +24,8 @@ class TabBarViewController: UIViewController {
     var accountViewController: UIViewController!
     var trendingViewController: UIViewController!
     
+    var tabButtons = [UIButton]()
+    var tabViewControllers = [UIViewController]()
     var currentTab: Int!
     
     override func viewDidLoad() {
@@ -35,12 +37,22 @@ class TabBarViewController: UIViewController {
         composeTabButton.tag = 2
         accountTabButton.tag = 3
         trendingTabButton.tag = 4
+        tabButtons.append(homeTabButton)
+        tabButtons.append(searchTabButton)
+        tabButtons.append(composeTabButton)
+        tabButtons.append(accountTabButton)
+        tabButtons.append(trendingTabButton)
         
         homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
         searchViewController = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
         composeViewController = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
         accountViewController = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
+        tabViewControllers.append(homeViewController)
+        tabViewControllers.append(searchViewController)
+        tabViewControllers.append(composeViewController)
+        tabViewControllers.append(accountViewController)
+        tabViewControllers.append(trendingViewController)
         
         currentTab = homeTabButton.tag
         selectTab(currentTab)
@@ -50,69 +62,23 @@ class TabBarViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-
     func selectTab(tab: Int) {
-        
         var frame = contentView.frame
         currentTab = tab
         
-        
-        
-        // USE AN ARRAY!!!!
-        switch tab {
-        case 0:
-            contentView.addSubview(homeViewController.view)
-            homeViewController.view.frame = frame
-            homeTabButton.selected = true
-        case 1:
-            contentView.addSubview(searchViewController.view)
-            searchViewController.view.frame = frame
-            searchTabButton.selected = true
-        case 2:
-            contentView.addSubview(composeViewController.view)
-            composeViewController.view.frame = frame
-            composeTabButton.selected = true
-        case 3:
-            contentView.addSubview(accountViewController.view)
-            accountViewController.view.frame = frame
-            accountTabButton.selected = true
-        case 4:
-            contentView.addSubview(trendingViewController.view)
-            trendingViewController.view.frame = frame
-            trendingTabButton.selected = true
-
-        default:
-            println("mysterr tabbutton tag: \(tab)")
-        }
+        contentView.addSubview(tabViewControllers[tab].view)
+        tabViewControllers[tab].view.frame = frame
+        tabButtons[tab].selected = true
     }
     
     func unselectTab(tab: Int) {
-        switch tab {
-        case 0:
-            contentView.addSubview(homeViewController.view)
-            homeTabButton.selected = true
-        case 1:
-            contentView.addSubview(searchViewController.view)
-            searchTabButton.selected = true
-        case 2:
-            contentView.addSubview(composeViewController.view)
-            searchTabButton.selected = true
-        case 3:
-            contentView.addSubview(accountViewController.view)
-        case 4:
-            contentView.addSubview(trendingViewController.view)
-        default:
-            println("mysterr tabbutton tag: \(tab)")
-        }
+        tabViewControllers[tab].view.removeFromSuperview()
+        tabButtons[tab].selected = false
     }
     
     @IBAction func onTabBarButton(button: UIButton) {
-
         unselectTab(currentTab)
         selectTab(button.tag)
-        
-        
- 
     }
     
 }
