@@ -47,24 +47,27 @@ class TabBarViewController: UIViewController {
     
 
     @IBAction func onTabBarButton(button: UIButton) {
+        var frame = contentView.frame
         
         switch button.tag {
         case 0:
             contentView.addSubview(homeViewController.view)
+            homeViewController.view.frame = frame
         case 1:
             contentView.addSubview(searchViewController.view)
+            searchViewController.view.frame = frame
         case 2:
             contentView.addSubview(composeViewController.view)
+            composeViewController.view.frame = frame
         case 3:
             contentView.addSubview(accountViewController.view)
+            accountViewController.view.frame = frame
         case 4:
             contentView.addSubview(trendingViewController.view)
+            trendingViewController.view.frame = frame
         default:
             println("mysterr tabbutton tag: \(button.tag)")
         }
-        
-        
-        //contentView.addSubview(vienwafsd)
     }
-
+    
 }

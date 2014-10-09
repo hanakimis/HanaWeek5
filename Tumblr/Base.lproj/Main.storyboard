@@ -78,7 +78,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.19607843137254902" green="0.25490196078431371" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" id="zFP-SH-S8H">
+                            <view contentMode="scaleToFill" id="zFP-SH-S8H" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
