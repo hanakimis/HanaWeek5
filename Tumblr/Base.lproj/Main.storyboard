@@ -16,7 +16,7 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nqR-Cl-rK5" userLabel="Home Tab Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="nqR-Cl-rK5" userLabel="Home Tab Button">
                                         <rect key="frame" x="22" y="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.19607844948768616" green="0.25490197539329529" blue="0.34117648005485535" alpha="1" colorSpace="deviceRGB"/>
@@ -36,10 +36,10 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="onTabBarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ogx-WW-ACU"/>
+                                            <segue destination="krD-SH-yHH" kind="modal" id="gaq-L9-zar"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LFb-Ty-z08" userLabel="Account Tab BUtton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="LFb-Ty-z08" userLabel="Account Tab BUtton">
                                         <rect key="frame" x="212" y="3" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1960784495" green="0.25490197539999998" blue="0.34117648010000001" alpha="1" colorSpace="deviceRGB"/>
@@ -51,7 +51,7 @@
                                             <action selector="onTabBarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YoS-9m-aK5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mcl-Dp-Ijt" userLabel="Trending Tab Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="mcl-Dp-Ijt" userLabel="Trending Tab Button">
                                         <rect key="frame" x="267" y="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1960784495" green="0.25490197539999998" blue="0.34117648010000001" alpha="1" colorSpace="deviceRGB"/>
@@ -63,7 +63,7 @@
                                             <action selector="onTabBarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sd0-CB-pML"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BMU-XH-fT0" userLabel="Search Tab Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="BMU-XH-fT0" userLabel="Search Tab Button">
                                         <rect key="frame" x="78" y="4" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.1960784495" green="0.25490197539999998" blue="0.34117648010000001" alpha="1" colorSpace="deviceRGB"/>
@@ -81,10 +81,10 @@
                             <view contentMode="scaleToFill" id="zFP-SH-S8H" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.19215686274509802" green="0.25098039215686274" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.22912864963503649" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="accountTabButton" destination="LFb-Ty-z08" id="eYX-fG-sAn"/>
@@ -135,10 +135,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search_feed" id="V4b-xH-dht">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="e3N-e2-itd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_feed" id="P3e-Pg-4Af">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -203,10 +209,20 @@
                                 <state key="normal" image="nevermind">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNevermindButton:" destination="krD-SH-yHH" eventType="touchUpInside" id="uUL-vM-yU2"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.19215686274509802" green="0.25098039215686274" blue="0.34509803921568627" alpha="0.89000000000000001" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="chatButton" destination="60d-eS-nZ0" id="Brd-do-74p"/>
+                        <outlet property="linkButton" destination="YQV-9k-n0z" id="cez-87-F61"/>
+                        <outlet property="photoButton" destination="dzg-wZ-UlV" id="vE3-48-Lx7"/>
+                        <outlet property="quoteButton" destination="n9K-mZ-WQw" id="ItW-si-BqQ"/>
+                        <outlet property="textButton" destination="6Zk-0P-GIh" id="fdD-dx-QQE"/>
+                        <outlet property="videoButton" destination="hCc-1y-fsU" id="Z1P-3Z-xaY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAL-lU-tOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

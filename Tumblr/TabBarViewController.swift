@@ -34,23 +34,19 @@ class TabBarViewController: UIViewController {
         
         homeTabButton.tag     = 0
         searchTabButton.tag   = 1
-        composeTabButton.tag  = 2
-        accountTabButton.tag  = 3
-        trendingTabButton.tag = 4
+        accountTabButton.tag  = 2
+        trendingTabButton.tag = 3
         tabButtons.append(homeTabButton)
         tabButtons.append(searchTabButton)
-        tabButtons.append(composeTabButton)
         tabButtons.append(accountTabButton)
         tabButtons.append(trendingTabButton)
         
         homeViewController     = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as UIViewController
         searchViewController   = storyboard.instantiateViewControllerWithIdentifier("SearchViewController") as UIViewController
-        composeViewController  = storyboard.instantiateViewControllerWithIdentifier("ComposeViewController") as UIViewController
         accountViewController  = storyboard.instantiateViewControllerWithIdentifier("AccountViewController") as UIViewController
         trendingViewController = storyboard.instantiateViewControllerWithIdentifier("TrendingViewController") as UIViewController
         tabViewControllers.append(homeViewController)
         tabViewControllers.append(searchViewController)
-        tabViewControllers.append(composeViewController)
         tabViewControllers.append(accountViewController)
         tabViewControllers.append(trendingViewController)
         
@@ -66,19 +62,27 @@ class TabBarViewController: UIViewController {
         var frame = contentView.frame
         currentTab = tab
         
+        self.addChildViewController(tabViewControllers[tab])
         contentView.addSubview(tabViewControllers[tab].view)
         tabViewControllers[tab].view.frame = frame
+        tabViewControllers[tab].didMoveToParentViewController(self)
         tabButtons[tab].selected = true
     }
     
     func unselectTab(tab: Int) {
-        tabViewControllers[tab].view.removeFromSuperview()
         tabButtons[tab].selected = false
     }
     
     @IBAction func onTabBarButton(button: UIButton) {
         unselectTab(currentTab)
         selectTab(button.tag)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        var destinationVC = segue.destinationViewController as UIViewController
+        destinationVC.modalPresentationStyle = UIModalPresentationStyle.Custom
+        destinationVC.transitioningDelegate = destinationVC as ComposeViewController
     }
     
 }
