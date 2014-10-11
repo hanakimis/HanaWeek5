@@ -50,6 +50,9 @@ class TabBarViewController: UIViewController {
         tabViewControllers.append(accountViewController)
         tabViewControllers.append(trendingViewController)
         
+        composeTabButton.tag  = 10
+        
+        
         currentTab = homeTabButton.tag
         selectTab(currentTab)
     }

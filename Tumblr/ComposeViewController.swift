@@ -27,7 +27,6 @@ class ComposeViewController: UIViewController,  UIViewControllerTransitioningDel
     }
     
     func initalizeButtonLocations() {
-        // finish locations 119, 258
         textButton.frame.origin.y  = 1700
         photoButton.frame.origin.y = 580
         quoteButton.frame.origin.y = 1180
@@ -65,17 +64,20 @@ class ComposeViewController: UIViewController,  UIViewControllerTransitioningDel
             println("animating on")
 
             containerView.addSubview(toViewController.view)
-            toViewController.view.alpha = 1
+            toViewController.view.alpha = 0
             UIView.animateWithDuration(0.5, animations: { () -> Void in
+                toViewController.view.alpha = 1
                 self.textButton.frame.origin.y  = 119
                 self.photoButton.frame.origin.y = 119
                 self.quoteButton.frame.origin.y = 119
                 self.linkButton.frame.origin.y  = 258
                 self.chatButton.frame.origin.y  = 258
                 self.videoButton.frame.origin.y = 258
+                
                 }) { (finished: Bool) -> Void in
                     transitionContext.completeTransition(true)
             }
+            
         } else {
             println("animating off")
             
@@ -95,9 +97,6 @@ class ComposeViewController: UIViewController,  UIViewControllerTransitioningDel
             }
         }
     }
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
