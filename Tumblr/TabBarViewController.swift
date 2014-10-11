@@ -17,6 +17,7 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var composeTabButton: UIButton!
     @IBOutlet weak var accountTabButton: UIButton!
     @IBOutlet weak var trendingTabButton: UIButton!
+    @IBOutlet weak var explorePopoverImage: UIImageView!
     
     var homeViewController: UIViewController!
     var searchViewController: UIViewController!
@@ -50,15 +51,20 @@ class TabBarViewController: UIViewController {
         tabViewControllers.append(accountViewController)
         tabViewControllers.append(trendingViewController)
         
-        composeTabButton.tag  = 10
-        
-        
         currentTab = homeTabButton.tag
         selectTab(currentTab)
+        
+        UIView.animateWithDuration(0.7, delay: 0.0, options: UIViewAnimationOptions.Autoreverse | UIViewAnimationOptions.Repeat, animations: { () -> Void in
+            self.explorePopoverImage.frame.origin.y = 465
+            }) { (finished: Bool) -> Void in
+        }
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    
+    @IBAction func onTabBarButton(button: UIButton) {
+        unselectTab(currentTab)
+        selectTab(button.tag)
     }
     
     func selectTab(tab: Int) {
@@ -70,17 +76,17 @@ class TabBarViewController: UIViewController {
         tabViewControllers[tab].view.frame = frame
         tabViewControllers[tab].didMoveToParentViewController(self)
         tabButtons[tab].selected = true
+        
+        if (tabButtons[tab].tag == 1) {
+            explorePopoverImage.hidden = true
+        } else {
+            explorePopoverImage.hidden = false
+        }
     }
     
     func unselectTab(tab: Int) {
         tabButtons[tab].selected = false
     }
-    
-    @IBAction func onTabBarButton(button: UIButton) {
-        unselectTab(currentTab)
-        selectTab(button.tag)
-    }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         var destinationVC = segue.destinationViewController as UIViewController
@@ -88,4 +94,7 @@ class TabBarViewController: UIViewController {
         destinationVC.transitioningDelegate = destinationVC as ComposeViewController
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }

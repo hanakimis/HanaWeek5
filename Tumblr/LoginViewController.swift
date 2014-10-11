@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
 
         view.backgroundColor = UIColor(red: 60/255, green: 78/255, blue: 96/255, alpha: 0.9)
     }
-        
+    
     @IBAction func onCancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

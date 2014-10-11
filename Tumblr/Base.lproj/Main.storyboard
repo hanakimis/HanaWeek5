@@ -83,6 +83,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.19215686274509802" green="0.25098039215686274" blue="0.34509803921568627" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="explore_popup" id="iDR-7C-qFB">
+                                <rect key="frame" x="0.0" y="450" width="185" height="77"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.22912864963503649" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -90,6 +94,7 @@
                         <outlet property="accountTabButton" destination="LFb-Ty-z08" id="eYX-fG-sAn"/>
                         <outlet property="composeTabButton" destination="DyS-da-uB0" id="igf-By-suX"/>
                         <outlet property="contentView" destination="zFP-SH-S8H" id="5IC-5K-wmJ"/>
+                        <outlet property="explorePopoverImage" destination="iDR-7C-qFB" id="Idh-Nk-GZL"/>
                         <outlet property="homeTabButton" destination="nqR-Cl-rK5" id="Mdw-Lh-UKy"/>
                         <outlet property="searchTabButton" destination="BMU-XH-fT0" id="V17-c4-hSg"/>
                         <outlet property="trendingTabButton" destination="mcl-Dp-Ijt" id="qa2-o0-wT1"/>
@@ -336,6 +341,7 @@
         <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
+        <image name="explore_popup" width="185" height="77"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
