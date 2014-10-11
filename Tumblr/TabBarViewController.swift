@@ -60,8 +60,6 @@ class TabBarViewController: UIViewController {
         }
     }
     
-
-    
     @IBAction func onTabBarButton(button: UIButton) {
         unselectTab(currentTab)
         selectTab(button.tag)

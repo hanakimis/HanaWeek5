@@ -10,18 +10,25 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var loadingImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.hidden = true
+        var images = UIImage.animatedImageNamed("loading-", duration: 0.7)
+        loadingImage.image = images
     }
 
     
     override func viewDidAppear(animated: Bool) {
-        
-        
+        scrollView.hidden = true
         delay(2) {
-            
+            self.scrollView.hidden = false
         }
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
