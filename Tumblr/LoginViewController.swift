@@ -20,6 +20,11 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
         view.backgroundColor = UIColor(red: 60/255, green: 78/255, blue: 96/255, alpha: 0.9)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        self.emailTextField.isFirstResponder()
+
+    }
+    
     @IBAction func onCancelButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -54,8 +59,8 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
                 toViewController.view.alpha = 1
                 
                 }) { (finished: Bool) -> Void in
-                    self.emailTextField.isFirstResponder()
                     transitionContext.completeTransition(true)
+                    self.emailTextField.isFirstResponder()
             }
             
         } else {

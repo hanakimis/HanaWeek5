@@ -84,6 +84,7 @@ class TabBarViewController: UIViewController {
     
     func unselectTab(tab: Int) {
         tabButtons[tab].selected = false
+        tabViewControllers[tab].view.removeFromSuperview()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
