@@ -3,7 +3,7 @@
 This is Hana Kim's submission for the assignment (Tumblr prototype) for Week 5 in the Codepath, September 2014 iOS for Designers class.
 
 
-**Time Spent:** ??? Hours
+**Time Spent:** 8 Hours
 
 
 #### Completed User Stories
@@ -17,7 +17,7 @@ This is Hana Kim's submission for the assignment (Tumblr prototype) for Week 5 i
 
 
 #### Walkthrough of Stories
-![alt text](https://github.com/hanakimis/facebook/blob/master/HanaKimWeek5.gif "Week 5 gif")
+![alt text](https://github.com/hanakimis/HanaKimWeek5/blob/master/HanaKimWeek5.gif "Week 5 gif")
 
 ***
 
