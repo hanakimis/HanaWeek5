@@ -198,8 +198,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search_feed" id="P3e-Pg-4Af">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trending_feed" id="P3e-Pg-4Af">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -208,6 +208,7 @@
                         <color key="backgroundColor" red="0.25098040699958801" green="0.34509804844856262" blue="0.50980395078659058" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
+                        <outlet property="feedImage" destination="P3e-Pg-4Af" id="Yp6-uY-he3"/>
                         <outlet property="loadingImage" destination="1Q6-Ur-RbI" id="wYU-Ho-Y0L"/>
                         <outlet property="scrollView" destination="e3N-e2-itd" id="top-ys-Mhz"/>
                     </connections>
@@ -323,11 +324,12 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="emS-Ps-77J">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending" id="emS-Ps-77J">
+                                        <rect key="frame" x="0.0" y="-355" width="320" height="1217"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentInset" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                             </scrollView>
                         </subviews>
@@ -361,10 +363,10 @@
         <image name="nevermind" width="320" height="53"/>
         <image name="photo_icon" width="75" height="95"/>
         <image name="quote_icon" width="75" height="96"/>
-        <image name="search_feed" width="320" height="524"/>
         <image name="search_icon" width="35" height="35"/>
         <image name="search_selected_icon" width="35" height="35"/>
         <image name="text_icon" width="75" height="95"/>
+        <image name="trending" width="301" height="225"/>
         <image name="trending_feed" width="320" height="1217"/>
         <image name="trending_icon" width="35" height="35"/>
         <image name="trending_selected_icon" width="35" height="35"/>

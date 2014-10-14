@@ -12,12 +12,14 @@ class SearchViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loadingImage: UIImageView!
+    @IBOutlet weak var feedImage: UIImageView!
     
     var count: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.contentSize = feedImage.frame.size
         scrollView.hidden = true
         var images = UIImage.animatedImageNamed("loading-", duration: 0.7)
         loadingImage.image = images
