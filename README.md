@@ -15,6 +15,9 @@ This is Hana Kim's submission for the assignment (Tumblr prototype) for Week 5 i
 * **Optional**: Discover bubble should bob up and down unless the SearchViewController is tapped.
 
 
+#### Completed User Stories
+* I added an image that looked more like the example GIF for the trending screen, rather than the one presented.
+
 
 #### Walkthrough of Stories
 ![alt text](https://github.com/hanakimis/HanaWeek5/blob/master/HanaKimWeek5.gif "Week 5 gif")
